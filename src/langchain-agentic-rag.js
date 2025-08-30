@@ -16,7 +16,7 @@ import readline from "readline";
 import fs from "fs";
 
 // 加载环境变量
-dotenv.config();
+dotenv.config({ path: "../.env" });
 
 // 创建命令行接口
 const rl = readline.createInterface({
@@ -30,7 +30,7 @@ class LangChainKnowledgeBase {
     this.documents = [];
     this.vectorStore = null;
     this.embeddings = new GoogleGenerativeAIEmbeddings({
-      apiKey: process.env.GEMINI_API_KEY,
+      apiKey: process.env.GOOGLE_API_KEY,
       modelName: "embedding-001",
     });
     this.textSplitter = new RecursiveCharacterTextSplitter({
@@ -275,9 +275,9 @@ class LangChainAgenticRAG {
   constructor(knowledgeBase) {
     this.kb = knowledgeBase;
     this.llm = new ChatGoogleGenerativeAI({
-      apiKey: process.env.GEMINI_API_KEY,
+      apiKey: process.env.GOOGLE_API_KEY,
       model: "gemini-1.5-flash",
-      temperature: 0.7,
+      temperature: 0.1,
     });
     this.conversationHistory = [];
     this.setupAgent();
@@ -352,7 +352,9 @@ class LangChainAgenticRAG {
         agent: this.agent,
         tools: this.tools,
         verbose: true,
-        maxIterations: 3,
+        maxIterations: 5,
+        returnIntermediateSteps: true,
+        handleParsingErrors: true,
       });
 
       console.log("✅ LangChain 智能代理设置完成");
