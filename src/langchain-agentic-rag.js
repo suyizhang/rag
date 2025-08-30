@@ -355,7 +355,6 @@ class LangChainAgenticRAG {
         maxIterations: 3,
         returnIntermediateSteps: false,
         handleParsingErrors: true,
-        earlyStoppingMethod: "generate",
       });
 
       console.log("✅ LangChain 智能代理设置完成");
@@ -398,12 +397,30 @@ class LangChainAgenticRAG {
       console.log("🔍 正在分析查询并执行...");
 
       let response;
+      let method = "Agent";
+
       if (this.agentExecutor) {
-        // 使用智能代理
-        const result = await this.agentExecutor.invoke({
-          input: query,
-        });
-        response = result.output;
+        try {
+          // 使用智能代理
+          const result = await this.agentExecutor.invoke({
+            input: query,
+          });
+
+          if (
+            result &&
+            result.output &&
+            !result.output.includes("Agent stopped")
+          ) {
+            response = result.output;
+          } else {
+            throw new Error("代理达到最大迭代次数");
+          }
+        } catch (agentError) {
+          console.log("⚠️  代理查询失败，回退到直接RAG查询");
+          const ragResult = await this.directRAGQuery(query);
+          response = ragResult.response;
+          method = "DirectRAG";
+        }
       } else {
         // 使用简化链
         const history = this.conversationHistory
@@ -429,7 +446,7 @@ class LangChainAgenticRAG {
       return {
         response,
         responseTime: responseTime + "s",
-        method: this.agentExecutor ? "Agent" : "Chain",
+        method,
       };
     } catch (error) {
       throw new Error(`查询处理失败: ${error.message}`);
