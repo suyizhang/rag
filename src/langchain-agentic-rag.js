@@ -351,10 +351,11 @@ class LangChainAgenticRAG {
       this.agentExecutor = new AgentExecutor({
         agent: this.agent,
         tools: this.tools,
-        verbose: true,
-        maxIterations: 5,
-        returnIntermediateSteps: true,
+        verbose: false,
+        maxIterations: 3,
+        returnIntermediateSteps: false,
         handleParsingErrors: true,
+        earlyStoppingMethod: "generate",
       });
 
       console.log("✅ LangChain 智能代理设置完成");
