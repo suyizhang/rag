@@ -1,0 +1,57 @@
+[
+  {
+    "id": "adv_doc1",
+    "title": "Agentic RAG系统架构",
+    "content": "Agentic RAG结合了智能代理和检索增强生成技术。代理具有自主决策能力，可以根据查询类型选择最佳的检索和生成策略。系统包含意图分析、动态检索、多步推理和自适应生成等核心组件。",
+    "category": "AI架构",
+    "tags": [
+      "Agentic",
+      "RAG",
+      "智能代理",
+      "系统架构"
+    ],
+    "metadata": {
+      "author": "AI System",
+      "difficulty": "高级",
+      "readTime": "5分钟"
+    },
+    "timestamp": "2025-08-30T09:44:07.839Z"
+  },
+  {
+    "id": "adv_doc2",
+    "title": "向量检索技术",
+    "content": "向量检索是现代信息检索的核心技术。通过将文本转换为高维向量，可以计算语义相似度。常用的方法包括TF-IDF、Word2Vec、BERT嵌入等。向量数据库如Pinecone、Weaviate提供了高效的向量存储和检索能力。",
+    "category": "检索技术",
+    "tags": [
+      "向量检索",
+      "嵌入",
+      "语义搜索",
+      "向量数据库"
+    ],
+    "metadata": {
+      "author": "AI System",
+      "difficulty": "中级",
+      "readTime": "3分钟"
+    },
+    "timestamp": "2025-08-30T09:44:07.839Z"
+  },
+  {
+    "id": "adv_doc3",
+    "title": "大语言模型应用",
+    "content": "大语言模型如GPT、Claude、Gemini等在各个领域都有广泛应用。它们可以进行文本生成、问答、摘要、翻译等任务。结合RAG技术，可以显著提高模型回答的准确性和时效性，减少幻觉问题。",
+    "category": "AI应用",
+    "tags": [
+      "大语言模型",
+      "GPT",
+      "Claude",
+      "Gemini",
+      "应用"
+    ],
+    "metadata": {
+      "author": "AI System",
+      "difficulty": "中级",
+      "readTime": "4分钟"
+    },
+    "timestamp": "2025-08-30T09:44:07.839Z"
+  }
+]

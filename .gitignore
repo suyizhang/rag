@@ -1,0 +1,152 @@
+# 环境变量和配置文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API 密钥和敏感信息
+*.key
+*.pem
+*.p12
+config/secrets.json
+secrets/
+
+# Node.js 依赖
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 构建输出
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# 缓存目录
+.cache/
+.parcel-cache/
+.npm/
+.yarn/cache/
+.pnpm-store/
+
+# 运行时数据
+pids/
+*.pid
+*.seed
+*.pid.lock
+.grunt/
+lib-cov/
+coverage/
+.nyc_output/
+.coverage/
+
+# 日志文件
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 临时文件
+tmp/
+temp/
+.tmp/
+.temp/
+
+# 编辑器和IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PDF 和文档文件（可选，根据需要调整）
+# *.pdf
+# *.doc
+# *.docx
+
+# 测试文件和数据
+test-pdfs/
+test-documents/
+sample-data/
+*.test.pdf
+*.sample.txt
+
+# 知识库和数据文件
+knowledge-base.json
+*.kb.json
+vector-store/
+embeddings/
+data/cache/
+
+# Python 相关（如果有Python脚本）
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# 备份文件
+*.bak
+*.backup
+*.old
+*.orig
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 本地配置文件
+.local
+local.json
+config.local.js
+
+# 错误报告
+error-reports/
+crash-reports/
+
+# 性能分析文件
+*.cpuprofile
+*.heapprofile
+
+# 锁文件（保留package-lock.json，但忽略其他）
+# package-lock.json  # 通常应该保留
+yarn.lock
+pnpm-lock.yaml
+
+# 自定义忽略
+# 添加你的项目特定文件
+custom-configs/
+private-documents/
+personal-notes/
